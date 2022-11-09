@@ -28,7 +28,7 @@ function displayIngredients(){
 }
 
 //grabs recepies based on single item input
-function getRecipesByIngredient(){
+function getRecipesByIngredient() {
 
   console.log("onion");
 
@@ -36,21 +36,7 @@ function getRecipesByIngredient(){
 
   console.log(requestUrl)
 
-  fetch(requestUrl)
-  .then(function (response) {
-    return response.json();
-  })
 
-  .then(function (data) {
-    //targeting the list by id. in this case the placeholder is, recepieList1
-    let list = document.getElementById("recipeList1");
-    
-   //     console.log(ingredientSearchItem);
-
-        //makes list of recipes that use the item in the search function and consloe logs for good measure
-        for(i=0; i < data.hits.length; i++) {
-          console.log(data.hits[i].recipe.label);
-        }
 fetch(requestUrl)
     .then(function (response) {
       return response.json();
@@ -87,7 +73,7 @@ fetch(requestUrl)
     });
       }
     });
-  }
+  };
   
   
   function getRecipesByName(){
