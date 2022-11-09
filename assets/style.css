@@ -137,4 +137,6 @@ html, body {
         margin-right: 20px;
     }
 
-    
+    #hiddenRecipeInformation {
+        display: none;
+    }
