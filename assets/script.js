@@ -26,15 +26,33 @@ fetch(requestUrl)
     .then(function (data) {
       //targeting the list by id. in this case the placeholder is, recepieList1
         let list = document.getElementById("recipeList1");
-
+        var recipeLog = document.getElementById('hiddenRecipeInformation');       
         console.log(data.q);
 
       //makes list of recipes that use the item in the search function and consloe logs for good measure
       for(i=0; i < data.hits.length; i++) {
       console.log(data.hits[i].recipe.label);
+
+      
       var li = document.createElement('li');
       li.textContent = data.hits[i].recipe.label;
+      recipeName = document.createElement('h2');
+      recipeName.textContent = data.hits[i].recipe.label;
       list.appendChild(li);
+      var recipeIngredientList = document.createElement('ul'); 
+         // adding ingredients to the second list
+          for(y=0; y <data.hits[i].recipe.ingredients.length; y++){
+            var li2 = document.createElement('li');
+            console.log(data.hits[i].recipe.ingredients[y].text)
+            li2.textContent = data.hits[i].recipe.ingredients[y].text;
+            recipeIngredientList.appendChild(li2)
+      }
+      recipeName.appendChild(recipeIngredientList)
+      recipeLog.appendChild(recipeName)
+      
+      list.querySelectorAll('li').forEach(item =>{
+      item.addEventListener('click', displayIngredients);
+    });
       }
     });
 }
@@ -51,11 +69,10 @@ fetch(requestUrl)
     .then(function (data) {
       //targeting the list by id. in this case the placeholder is, recepieList2     
         let list = document.getElementById("recipeList2");
-        var recipeLog = document.getElementById('hiddenRecipeInformation');
-        
+        var recipeLog = document.getElementById('hiddenRecipeInformation');       
         console.log(data);
         
-        //makes list of recipes that use the item in the search function and consloe logs for good measure
+        //makes list of recipes that use the item in the search function then use that to make another list to add ingredients to
         for(i=0; i < data.hits.length; i++) {
           
           var li = document.createElement('li');
@@ -64,7 +81,7 @@ fetch(requestUrl)
           recipeName.textContent = data.hits[i].recipe.label;
           list.appendChild(li);
           var recipeIngredientList = document.createElement('ul'); 
-          
+         // adding ingredients to the second list
           for(y=0; y <data.hits[i].recipe.ingredients.length; y++){
             var li2 = document.createElement('li');
             console.log(data.hits[i].recipe.ingredients[y].text)
