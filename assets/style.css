@@ -137,6 +137,58 @@ html, body {
         margin-right: 20px;
     }
 
-    /* #hiddenRecipeInformation {
-        display: none;
-    } */
+    /* The sidepanel menu */
+.sidepanel {
+    height: 250px; 
+    width: 0; 
+    position: fixed;
+    z-index: 1; 
+    top: 0;
+    left: 0;
+    background-color: rgb(69, 31, 31);
+    overflow-x: hidden; /* stops up and down scrolling */
+    padding-top: 60px; /* 60px from the top */
+    transition: 0.5s; 
+  }
+/* The sidepanel links */
+.sidepanel a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #000000;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  
+  .sidepanel a:hover {
+    color: #f1f1f1;
+  }
+  
+  
+  .sidepanel .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+  .prepingsAPI {
+    color: antiquewhite;
+    cursor:help;
+    padding: 10px 15px;
+  }
+  
+  .openbtn {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: rgb(125, 48, 48);
+    color: white;
+    padding: 10px 15px;
+    border: none;
+  }
+  
+  .openbtn:hover {
+    background-color: rgb(69, 31, 31);
+  }

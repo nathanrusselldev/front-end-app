@@ -1,17 +1,29 @@
 
 
-var ingredientSearchItem = 'onion';
-var recipeSearchItem = 'onion rings';
+var ingredientSearchItem = document.querySelector("#ingredient");
+var recipeSearchItem = document.querySelector("#recipe");
+
+var button1 = document.querySelector("#button1");
+var button2 = document.querySelector("#button2");
+
+var ingredientsOfRecepieSearchItem = '';
+var openNav;
+var closeNav;
 
 function displayIngredients(){
 
-  console.log('reeeeeeeeeeeeeeeeeeeeeeeeee')
+  console.log('reeeeeeeeeeeeeeeeeeeeeeeeee') //literally dying
+
 }
 
 //grabs recepies based on single item input
 function getRecipesByIngredient(){
 
-    var requestUrl = 'https://russelldev-cors-anywhere.herokuapp.com/https://api.edamam.com/search?q='+ingredientSearchItem+'&app_id=b958af72&app_key=46b1301f63cc0535dde1e7187e2ff26b';
+  console.log("onion");
+
+  var requestUrl = 'https://russelldev-cors-anywhere.herokuapp.com/https://api.edamam.com/search?q='+ingredientSearchItem.value+'&app_id=b958af72&app_key=46b1301f63cc0535dde1e7187e2ff26b';
+
+  console.log(requestUrl)
 
 fetch(requestUrl)
     .then(function (response) {
@@ -52,15 +64,14 @@ fetch(requestUrl)
     });
       }
     });
-}
-
-
-function getRecipesByName(){
-
-    var requestUrl = 'https://russelldev-cors-anywhere.herokuapp.com/https://api.edamam.com/search?q='+recipeSearchItem+'&app_id=b958af72&app_key=46b1301f63cc0535dde1e7187e2ff26b';
-
+  }
+  
+  function getRecipesByName(){
+    
+    var requestUrl = 'https://russelldev-cors-anywhere.herokuapp.com/https://api.edamam.com/search?q='+recipeSearchItem.value+'&app_id=b958af72&app_key=46b1301f63cc0535dde1e7187e2ff26b';
+    
 fetch(requestUrl)
-    .then(function (response) {
+.then(function (response) {
       return response.json();
     })
     .then(function (data) {
@@ -88,11 +99,11 @@ fetch(requestUrl)
             console.log(data.hits[i].recipe.ingredients[y].text)
             li2.textContent = data.hits[i].recipe.ingredients[y].text;
             recipeIngredientList.appendChild(li2)
-      }
-      recipeName.appendChild(recipeIngredientList)
-      recipeLog.appendChild(recipeName)
+          }
+          recipeName.appendChild(recipeIngredientList)
+          recipeLog.appendChild(recipeName)
       
-      list.querySelectorAll('li').forEach(item =>{
+          list.querySelectorAll('li').forEach(item =>{
       item.addEventListener('click', displayIngredients);
     });
 
@@ -101,5 +112,15 @@ fetch(requestUrl)
     });
 }
 
-getRecipesByIngredient()
-getRecipesByName()
+function openNav() {
+  document.getElementById("mySidepanel").style.width = "250px";
+}
+
+/* Set the width of the sidebar to 0 (hide it) */
+function closeNav() {
+  document.getElementById("mySidepanel").style.width = "0";
+}
+
+       
+button1.addEventListener("click", getRecipesByName);
+button2.addEventListener("click", getRecipesByIngredient);
