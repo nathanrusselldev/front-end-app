@@ -3,6 +3,8 @@
 var ingredientSearchItem = 'onion';
 var recipeSearchItem = 'onion rings';
 var ingredientsOfRecepieSearchItem = '';
+var openNav;
+var closeNav;
 
 function displayIngredients(){
   // var ingredientArea = document.getElementById('fullRecipe');
@@ -11,7 +13,8 @@ function displayIngredients(){
   // recepieIngredientList = document.createElement('ul');
   // var li = document.createElement('li');
   // li.textContent = data.hits[i].recipe.ingredientLines;
-  console.log('reeeeeeeeeeeeeeeeeeeeeeeeee')
+  console.log('reeeeeeeeeeeeeeeeeeeeeeeeee') //literally dying
+
 }
 
 //grabs recepies based on single item input
@@ -98,6 +101,15 @@ fetch(requestUrl)
       };
       
     });
+}
+
+function openNav() {
+  document.getElementById("mySidepanel").style.width = "250px";
+}
+
+/* Set the width of the sidebar to 0 (hide it) */
+function closeNav() {
+  document.getElementById("mySidepanel").style.width = "0";
 }
 
 // function getIngredients(){
