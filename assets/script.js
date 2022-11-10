@@ -2,38 +2,48 @@
 
 var ingredientSearchItem = document.querySelector("#ingredient");
 var recipeSearchItem = document.querySelector("#recipe");
-
 var button1 = document.querySelector("#button1");
 var button2 = document.querySelector("#button2");
 
 var ingredientsOfRecepieSearchItem = '';
 var openNav;
 var closeNav;
+var list1 = document.getElementById('recipeList1');
+var list2 = document.getElementById("recipeList2");
 
 function addToShoppingCart(){
 
   console.log('reeeeeeeeeeeeeeeeeeeeeeeeee') //literally dying
 }
 
+function clearList(){
+  if(list1.hasChildNodes()){
+    list1.removeChild(list1.firstChild)
+    
+  }
+  return;
+}
+console.log(list1.hasChildNodes())
 //grabs recepies based on single item input
 function getRecipesByIngredient(){
-
-  console.log("onion");
-
+  
   var requestUrl = 'https://russelldev-cors-anywhere.herokuapp.com/https://api.edamam.com/search?q='+ingredientSearchItem.value+'&app_id=b958af72&app_key=46b1301f63cc0535dde1e7187e2ff26b';
-
+  
   console.log(requestUrl)
 
-fetch(requestUrl)
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (data) {
-      //targeting the list by id. in this case the placeholder is, recepieList1
-        let list = document.getElementById("recipeList1");
-        var recipeLog = document.getElementById('recipeInformation');       
-        console.log(data.q);
-
+  fetch(requestUrl)
+  .then(function (response) {
+    return response.json();
+  })
+  .then(function (data) {
+    //targeting the list by id. in this case the placeholder is, recepieList1
+    var recipeLog = document.getElementById('recipeInformation');       
+    console.log(data.q);
+    clearList();
+    var list1Div = document.createElement('div')
+    list1Div.setAttribute('id', 'list1Div')
+    list1.appendChild(list1Div)
+    console.log(list1.hasChildNodes())
       //makes list of recipes that use the item in the search function and console logs for good measure
       for(i=0; i < data.hits.length; i++) {
       console.log(data.hits[i].recipe.label);
@@ -46,7 +56,7 @@ fetch(requestUrl)
       recipeName.setAttribute('id', currentLabel)
       recipeName.textContent = currentLabel;
       li.appendChild(a);
-      list.appendChild(li);
+      list1Div.appendChild(li);
 
       var recipeIngredientList = document.createElement('ul');
       // adding ingredients to the second list
@@ -76,7 +86,6 @@ fetch(requestUrl)
     })
     .then(function (data) {
       //targeting the list by id. in this case the placeholder is, recepieList2     
-        let list = document.getElementById("recipeList2");
         var recipeLog = document.getElementById('recipeInformation');       
         console.log(data);
         
@@ -91,7 +100,7 @@ fetch(requestUrl)
           recipeName.setAttribute('id',currentLabel)
           recipeName.textContent = currentLabel;
           li.appendChild(a);
-          list.appendChild(li);
+          list2.appendChild(li);
           var recipeIngredientList = document.createElement('ul'); 
          // adding ingredients to the second list
           for(y=0; y <data.hits[i].recipe.ingredients.length; y++){
@@ -105,9 +114,7 @@ fetch(requestUrl)
           }
           recipeName.appendChild(recipeIngredientList)
           recipeLog.appendChild(recipeName)
-
-      };
-      
+      };     
     });
 }
 
@@ -119,7 +126,6 @@ function openNav() {
 function closeNav() {
   document.getElementById("mySidepanel").style.width = "0";
 }
-
        
 button1.addEventListener("click", getRecipesByName);
 button2.addEventListener("click", getRecipesByIngredient);
