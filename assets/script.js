@@ -43,6 +43,7 @@ fetch(requestUrl)
       a.href = "#"+currentLabel;
       a.textContent = currentLabel;
       recipeName = document.createElement('h2');
+      recipeName.setAttribute('id', currentLabel)
       recipeName.textContent = currentLabel;
       li.appendChild(a);
       list.appendChild(li);
@@ -87,7 +88,7 @@ fetch(requestUrl)
           a.href = "#"+currentLabel;
           a.textContent = currentLabel;
           recipeName = document.createElement('h2');
-          recipeName.id.add('#'+currentLabel)
+          recipeName.setAttribute('id',currentLabel)
           recipeName.textContent = currentLabel;
           li.appendChild(a);
           list.appendChild(li);
