@@ -10,10 +10,9 @@ var ingredientsOfRecepieSearchItem = '';
 var openNav;
 var closeNav;
 
-function displayIngredients(){
+function addToShoppingCart(){
 
   console.log('reeeeeeeeeeeeeeeeeeeeeeeeee') //literally dying
-
 }
 
 //grabs recepies based on single item input
@@ -44,6 +43,7 @@ fetch(requestUrl)
       a.href = "#"+currentLabel;
       a.textContent = currentLabel;
       recipeName = document.createElement('h2');
+      recipeName.setAttribute('id', currentLabel)
       recipeName.textContent = currentLabel;
       li.appendChild(a);
       list.appendChild(li);
@@ -55,13 +55,13 @@ fetch(requestUrl)
             console.log(data.hits[i].recipe.ingredients[y].text)
             li2.textContent = data.hits[i].recipe.ingredients[y].text;
             recipeIngredientList.appendChild(li2)
+            recipeIngredientList.querySelectorAll('li').forEach(item =>{
+            item.addEventListener('click', addToShoppingCart);
+      });
       } 
       recipeName.appendChild(recipeIngredientList)
       recipeLog.appendChild(recipeName)
       
-      list.querySelectorAll('li').forEach(item =>{
-      item.addEventListener('click', displayIngredients);
-    });
       }
     });
   }
@@ -88,7 +88,7 @@ fetch(requestUrl)
           a.href = "#"+currentLabel;
           a.textContent = currentLabel;
           recipeName = document.createElement('h2');
-          recipeName.id.add('#'+currentLabel)
+          recipeName.setAttribute('id',currentLabel)
           recipeName.textContent = currentLabel;
           li.appendChild(a);
           list.appendChild(li);
@@ -99,13 +99,12 @@ fetch(requestUrl)
             console.log(data.hits[i].recipe.ingredients[y].text)
             li2.textContent = data.hits[i].recipe.ingredients[y].text;
             recipeIngredientList.appendChild(li2)
+            recipeIngredientList.querySelectorAll('li').forEach(item =>{
+            item.addEventListener('click', addToShoppingCart);
+            });
           }
           recipeName.appendChild(recipeIngredientList)
           recipeLog.appendChild(recipeName)
-      
-          list.querySelectorAll('li').forEach(item =>{
-      item.addEventListener('click', displayIngredients);
-    });
 
       };
       
