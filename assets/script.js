@@ -74,7 +74,7 @@ function getRecipesByIngredient(){
       
       }
     });
-  }
+  };
   
   function getRecipesByName(){
     
