@@ -10,20 +10,33 @@ var openNav;
 var closeNav;
 var list1 = document.getElementById('recipeList1');
 var list2 = document.getElementById("recipeList2");
+var ingredientList = 
 
 function addToShoppingCart(){
 
   console.log('reeeeeeeeeeeeeeeeeeeeeeeeee') //literally dying
 }
 
-function clearList(){
+function clearList1(){
   if(list1.hasChildNodes()){
     list1.removeChild(list1.firstChild)
-    
   }
   return;
 }
-console.log(list1.hasChildNodes())
+
+function clearList2(){
+  if(list2.hasChildNodes()){
+    list2.removeChild(list2.firstChild)
+  }
+  return;
+}
+
+// function clearList1(){
+//   if(.hasChildNodes()){
+//     list1.removeChild(list1.firstChild)
+//   }
+//   return;
+// }
 //grabs recepies based on single item input
 function getRecipesByIngredient(){
   
@@ -39,7 +52,8 @@ function getRecipesByIngredient(){
     //targeting the list by id. in this case the placeholder is, recepieList1
     var recipeLog = document.getElementById('recipeInformation');       
     console.log(data.q);
-    clearList();
+    clearList1();
+    clearList2();
     var list1Div = document.createElement('div')
     list1Div.setAttribute('id', 'list1Div')
     list1.appendChild(list1Div)
@@ -88,7 +102,8 @@ fetch(requestUrl)
       //targeting the list by id. in this case the placeholder is, recepieList2     
         var recipeLog = document.getElementById('recipeInformation');       
         console.log(data);
-        
+        clearList1();
+        clearList2();
         //makes list of recipes that use the item in the search function then use that to make another list to add ingredients to
         for(i=0; i < data.hits.length; i++) {
           currentLabel = data.hits[i].recipe.label;
