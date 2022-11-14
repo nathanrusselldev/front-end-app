@@ -4,9 +4,9 @@ html, body {
     padding: 0;
 }
 
+/* Starting with main header styling */
 
 .main-header {
-   /* background-color: bisque; */
    background-image: linear-gradient(
     rgba(255, 246, 166, 0.3) 0%,
       rgba(255, 201, 4, 0.6)
@@ -20,6 +20,8 @@ html, body {
     padding: 15px 15px;
     display: inline-block;
 }
+
+/* nav styling and navigation */
 
  .nav {
     float: right;
@@ -42,6 +44,8 @@ html, body {
     text-decoration: none; 
     font-size: 20px;
 }
+
+/* The second header which includes the background image as well as the buttons and input forms */
 
 .header2 {
     background-image: url(./images/foodimage2.jpg);
@@ -68,7 +72,7 @@ html, body {
     opacity: 50%;
 }
 
-
+/* information that is displayed using user input */
 
 .dishsearch {
     display: flex;
@@ -319,119 +323,119 @@ html, body {
       padding-right: none;
     }
   
-  
-  .wrapper {
-    margin: 0 auto -2em;
-    min-height: 100%;
-  }
-  form {
-    width: inherit;
-  }
-  label {
-    display: block;
-    line-height: 1.5em;
-  }
-  input {
-    width: inherit;
-    padding: 1em;
-  }
-  .delete, button {
-    color: white;
-    background-color: #F87D09;
-  }
-  button {
-    border: 0;
-    padding: 1em;
-    width: inherit;
-    margin: 0.75em 0;
-  }
-  .icon {
-    display: inline-block;
-    width: 0.9em;
-    height: 0.9em;
-    margin-right: 0.25em;
-    fill: #004A55;
-  }
-  #bought-list li:before, #shopping-list li:before {
-    content: "";
-    display: inline-block;
-    background-size: 100%;
-    height: 0.9em;
-    width: 1em;
-    margin-right: 0.3em;
-  }
-  #shopping-list li:before {
-    background-image: url("https://res.cloudinary.com/ddy54k4ks/image/upload/v1454106412/svg/checkmark2.svg");
-  }
-  #bought-list li:before {
-    background-image: url("https://res.cloudinary.com/ddy54k4ks/image/upload/v1454106412/svg/checkmark.svg");
-  }
-  ul {
-    list-style: none;
-    margin: 0 auto;
-    padding: 0;
-  }
-  li {
-    color: #004A55;
-    padding: 0.75em;
-    cursor: pointer;
-    margin: 0.5em 0;
-    border: 1px solid #004A55;
-    position: relative;
-    transition: background-color 0.2s;
-  }
-  li:hover {
-    background-color: #A7CDCC;
-  }
-  .quantity {
-    color: #F87D09;
-  }
-  .quantity:before {
-    content: "(";
-  }
-  .quantity:after {
-    content: ")";
-  }
-  .delete {
-    float: right;
-    padding: inherit;
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-  .delete:after {
-    clear: both;
-  }
-  #bought-list li {
-    background-color: #F6F6F6;
-  }
-  #bought-list li .quantity {
-    color: #666666;
-  }
-  .list__label {
-    border-bottom: 2px solid #F87D09;
-    font-size: 0.75em;
-    color: #004A55;
-    padding: 0;
-  }
-
-    }
-
     .nav {
-      float:none;
+      float: none;
       justify-content: center;
       padding-left: 8%;
       padding-bottom: 5%;
-    }
-    .nav a {
-      display: inline-block;
-      padding-left: none;
-      padding: none;
-    }
-
-    .header2 h3 {
-      margin-left: 13%;
-    }
-
-
+      }
+      .nav a {
+        display: inline-block;
+        padding-left: none;
+        padding: none;
+      }
+      
+      .header2 h3 {
+        margin-left: 13%;
+      }
   
+    
+  }
+  
+    
+    
+    
+    .wrapper {
+      margin: 0 auto -2em;
+      min-height: 100%;
+    }
+    form {
+      width: inherit;
+    }
+    label {
+      display: block;
+      line-height: 1.5em;
+    }
+    input {
+      width: inherit;
+      padding: 1em;
+    }
+    .delete, button {
+      color: white;
+      background-color: #F87D09;
+    }
+    button {
+      border: 0;
+      padding: 1em;
+      width: inherit;
+      margin: 0.75em 0;
+    }
+    .icon {
+      display: inline-block;
+      width: 0.9em;
+      height: 0.9em;
+      margin-right: 0.25em;
+      fill: #004A55;
+    }
+    #bought-list li:before, #shopping-list li:before {
+      content: "";
+      display: inline-block;
+      background-size: 100%;
+      height: 0.9em;
+      width: 1em;
+      margin-right: 0.3em;
+    }
+    #shopping-list li:before {
+      background-image: url("https://res.cloudinary.com/ddy54k4ks/image/upload/v1454106412/svg/checkmark2.svg");
+    }
+    #bought-list li:before {
+      background-image: url("https://res.cloudinary.com/ddy54k4ks/image/upload/v1454106412/svg/checkmark.svg");
+    }
+    ul {
+      list-style: none;
+      margin: 0 auto;
+      padding: 0;
+    }
+    li {
+      color: #004A55;
+      padding: 0.75em;
+      cursor: pointer;
+      margin: 0.5em 0;
+      border: 1px solid #004A55;
+      position: relative;
+      transition: background-color 0.2s;
+    }
+    li:hover {
+      background-color: #A7CDCC;
+    }
+    .quantity {
+      color: #F87D09;
+    }
+    .quantity:before {
+      content: "(";
+    }
+    .quantity:after {
+      content: ")";
+    }
+    .delete {
+      float: right;
+      padding: inherit;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    .delete:after {
+      clear: both;
+    }
+    #bought-list li {
+      background-color: #F6F6F6;
+    }
+    #bought-list li .quantity {
+      color: #666666;
+    }
+    .list__label {
+      border-bottom: 2px solid #F87D09;
+      font-size: 0.75em;
+      color: #004A55;
+      padding: 0;
+    }
