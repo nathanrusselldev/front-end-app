@@ -45,6 +45,7 @@ html, body {
     padding: 50px;
     margin-top: 20px;
     display: flex;
+    flex-wrap: wrap;
     align-content: space-between;
 }
 
@@ -197,6 +198,7 @@ html, body {
   .main {
     display: flex;
     justify-content:center;
+    flex-wrap: wrap;
     padding-top: 60px;
   }
 
@@ -228,3 +230,18 @@ html, body {
   }
 
   
+  @media (max-width: 768px) {
+    .header2 {
+        background-image: none;
+        background-color: rgb(110, 73, 73);
+        flex-direction: column;
+    }
+
+    .header2 button {
+        flex-wrap: wrap;
+    }
+  }
+
+  @media (max-width: 480) {
+
+  }
