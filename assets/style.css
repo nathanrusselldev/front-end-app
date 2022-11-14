@@ -416,22 +416,3 @@ html, body {
   }
 
     }
-
-    .nav {
-      float:none;
-      justify-content: center;
-      padding-left: 8%;
-      padding-bottom: 5%;
-    }
-    .nav a {
-      display: inline-block;
-      padding-left: none;
-      padding: none;
-    }
-
-    .header2 h3 {
-      margin-left: 13%;
-    }
-
-
-  
