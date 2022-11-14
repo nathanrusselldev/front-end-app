@@ -6,7 +6,12 @@ html, body {
 
 
 .main-header {
-    background-color: bisque;
+   /* background-color: bisque; */
+   background-image: linear-gradient(
+    rgba(255, 246, 166, 0.3) 0%,
+      rgba(255, 201, 4, 0.6)
+    100%
+  );
 }
 
 .main-header h1 {
@@ -256,11 +261,11 @@ html, body {
 
   .footer {
     margin-top: 20px;
-   /* background-image: linear-gradient(
-      rgba(114, 109, 67, 0.3) 0%,
-        rgba(255, 201, 4, 0.6)
+    background-image: linear-gradient(
+      rgba(211, 161, 45, 0.3) 0%,
+        rgba(244, 193, 8, 0.6)
       100%
-    ); */
+    ); 
     background-color: bisque;
     height: 200px;
   }
