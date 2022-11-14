@@ -319,8 +319,8 @@ html, body {
       padding-right: none;
     }
   
-  
-  .wrapper {
+ /* start of style for form1 */
+.wrapper {
     margin: 0 auto -2em;
     min-height: 100%;
   }
