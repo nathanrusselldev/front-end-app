@@ -10,7 +10,6 @@ var openNav;
 var closeNav;
 var list1 = document.getElementById('recipeList1');
 var list2 = document.getElementById("recipeList2");
-var ingredientList = 
 
 function addToShoppingCart(){
 
