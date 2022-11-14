@@ -13,10 +13,35 @@
             <script src="http://api.preppings.com/api/?key=647e2e62b3fd01e00813cd59c3856263"data-color-schema="dark"></script>
 
         </div>
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="#">🛒 Shopping List</a>
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> 
         <a href="#">🍽️ By Ingredient</a>
-        <a href="#">📝  By Recipe</a>
+        <a href="#">🛒 Shopping List</a>
+        <form>
+            <label for="item-input">Item</label>
+            <input type="text" id="item-input">
+            <label for="quantity-input">Quantity</label>
+            <input type="number" id="quantity-input">
+            <button type="submit" id="submit-btn">Add</button>
+          </form>
+     
+          <div id="lists">
+            <p class="list__label">Still need to grab <span class="quantity" id="shopping-num"></span></p>
+            <ul id="shopping-list">
+            </ul>
+            <p class="list__label">In cart <span class="quantity" id="bought-num"></span></p>
+            <ul id="bought-list">
+            </ul>
+          </div>
+     
+        </main>
+        <div class="push"></div>
+    </div>
+   
+       
+       
+  
+       
+        
        
       </div>
       
@@ -55,11 +80,21 @@
     <ul id="ingredientList"></ul>
     <div id="recipeInformation"></div>
 </main>
+<<<<<<< HEAD
+<!-- jQuery -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js'></script>
+<!-- Lodash JS -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js'></script>
+<!-- Backbone JS -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.2.3/backbone-min.js'></script>
+
+=======
 <footer class = "footer"> 
     <div>
         
     </div>
 </footer>
+>>>>>>> 21da939954cb6b7549feb6d673cf610e5504bcc3
 </body>
 <script src="assets/script.js"></script>
 </html>
