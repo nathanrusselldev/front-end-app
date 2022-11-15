@@ -9,6 +9,8 @@ N/A
 ## Usage 
 The user inputs an ingredient or a recipe by name and hits the search button. The ui will then display recipes that include the input ingredient or recipes that the user wanted to search by name. The user is also able to add ingredients to a shopping list that they would be able to reference whenever they wish. 
 
+![screenshot of the recepie locator front page](assets/images/Recipie-Locator.png)
+
 ## Credits
 
 This project was worked on by 3 collaborators. 
