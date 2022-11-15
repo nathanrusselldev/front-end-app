@@ -35,7 +35,7 @@
                 }, options);
 
                 var $head = $('head')
-                    .append($('<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300" rel="stylesheet" type="text/css">'))
+                    .append($('<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300" rel="stylesheet" type="text/css">'))
                     .append($('<link href="' + PreppingsApiUrl + 'static/preppings.css?' + new Date().getTime() + '" rel="stylesheet" type="text/css" />'))
                     .append($('<link href="' + PreppingsApiUrl + 'static/jquery-ui/jquery-ui.min.css" type="text/css" rel="stylesheet"/>'))
                     .append($('<link href="' + PreppingsApiUrl + 'static/colorbox.css" rel="stylesheet" type="text/css" />'));
@@ -94,7 +94,7 @@
                     $.colorbox({
                         maxWidth: '90%',
                         minWidth: '200px',
-                        html: $('<div class="preppings-search-results"><a class="powered-by-preppings" href="http://preppings.com/" target="_blank">Powered by Preppings</a>' + result + '</div>'),
+                        html: $('<div class="preppings-search-results"><a class="powered-by-preppings" href="https://preppings.com/" target="_blank">Powered by Preppings</a>' + result + '</div>'),
                         onComplete: function() {
                             $('.preppings-search-results .picture img').centerImage();
                             popupDelegate($('.preppings-search-results'));
